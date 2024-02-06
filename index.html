@@ -1,0 +1,97 @@
+<html>
+    <head>
+    <title>Form contato</title>
+    </head>
+    <style>
+        *{margin:0 ; padding:0;box-sizing: border-box ;}
+        body{
+            background-color: #5f7c8a;
+        }
+        form{
+            background-color: white;
+            max-width: 500px;
+            width: 70%;
+            padding: 26px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            /*transform : atribuindo -50% duas vezes eu centralizo o formulario email/senha */
+        }
+        form h3{
+            text-align: center;
+            color: #5f7c8a;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+
+        }
+        
+        form input {
+            width: 100%;
+            height: 40px;
+            border: 1px solid #ccc;
+            padding-left: 10px;
+            margin: 10px 0;
+            border-radius: 20px;
+
+        }
+        form input[type=submit]{
+            height: 40px;
+            cursor: pointer;
+            background-color: #5f7c8a;
+            color: white;
+            border: 0;
+            border-radius: 20px;
+        }
+        form input[type=submit]:hover{
+            background: color #4a5f6a; 
+        }
+        form input:focus{
+            outline: 0;
+        }
+        form input[type=checkbox]{
+            width: 100%;
+            height: 15px;
+            position: absolute;
+            bottom: 17px;
+            right: 220px;
+        }
+        
+        form label[for=lembrar] {
+         position: relative;
+         bottom: 0px; /* Ajuste a posição vertical conforme necessário */
+         left: 20px; /* Ajuste a posição horizontal conforme necessário */
+        }
+        
+        /*outiline= retira borda grosseira do input*/
+
+        
+    </style>
+
+    <body>
+        <form>
+            <h3>Entrar em contato</h3>
+            <input id="email" nome="email" placeholder="Seu e-mail..." />
+            <input type="password" nome="senha" placeholder="Sua senha" />
+            <input type="submit" nome="acao" value="Enviar" />
+            <input type="checkbox"name="lembrar[]"id="lembrar"/>
+            <label for="lembrar">Lembrar login</label>
+        </form>
+        <script>
+            var email = document.getElementById('email');
+
+            email.addEventListener('focus',()=>{                    
+                email.style.borderColor = "#4a5f6a";
+            
+            });
+
+            email.addEventListener('blur',()=>{                    
+                email.style.borderColor = "#ccc";
+            
+            });
+            /* focus e blur serve para colocar e retirar o contorno quando selecionada a aba */
+
+        </script>
+        
+    </body>
+</html>
